@@ -31,7 +31,7 @@
             <state_interface name="position" />
         </joint>
     </ros2_control> 
-    
+
     <!-- 
     </ros2_control>
 
@@ -62,12 +62,12 @@
     </ros2_control> 
     -->
 
-    <gazebo>
+    <!-- <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
             <parameters>
                 $(find wood_bot)/config/my_controllers.yaml
             </parameters>
         </plugin>
-    </gazebo>
+    </gazebo> -->
 
 </robot>
