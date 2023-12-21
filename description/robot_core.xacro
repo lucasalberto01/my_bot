@@ -35,12 +35,12 @@
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis"/>
-        <origin xyz="-0.07 0 0" />
+        <origin xyz="-0.05 0 0" />
     </joint>
 
     <link name="chassis">
         <visual>
-            <origin xyz="0.15 0 0.075" />
+            <origin xyz="0.10 0 0.075" />
             <geometry>
                 <box size="0.27 0.2 0.17"/>
             </geometry>
@@ -53,7 +53,7 @@
             </geometry>
         </collision>
         <xacro:inertial_box mass="0.5" x="0.27" y="0.2" z="0.17" >
-            <origin xyz="0.15 0 0.075" rpy="0 0 0"/>
+            <origin xyz="0.10 0 0.075" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
 
