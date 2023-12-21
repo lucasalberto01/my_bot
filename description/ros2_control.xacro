@@ -32,10 +32,7 @@
         </joint>
     </ros2_control> 
 
-    <!-- 
-    </ros2_control>
-
-        <ros2_control name="GazeboSystem" type="system">
+    <!-- <ros2_control name="GazeboSystem" type="system">
         <hardware>
             <plugin>gazebo_ros2_control/GazeboSystem</plugin>
         </hardware>
@@ -60,9 +57,9 @@
         </joint>
 
     </ros2_control> 
-    -->
 
-    <!-- <gazebo>
+
+    <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
             <parameters>
                 $(find wood_bot)/config/my_controllers.yaml
