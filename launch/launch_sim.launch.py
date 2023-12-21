@@ -18,32 +18,36 @@ def generate_launch_description():
     package_name = 'wood_bot'  # <--- CHANGE ME
 
     rsp = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory(
-                package_name
-            ), 'launch', 'rsp.launch.py'
-        )]),
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory(package_name), 'launch', 'rsp.launch.py')
+        ]),
         launch_arguments={'use_sim_time': 'true'}.items()
     )
 
     # Include the Gazebo launch file, provided by the gazebo_ros package
     gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')]),
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')
+        ]),
+        launch_arguments={'world': os.path.join(get_package_share_directory(package_name), 'worlds', 'obstacles.world')}.items()
     )
 
     # Run the spawner node from the gazebo_ros package. The entity name doesn't really matter if you only have a single robot.
-    spawn_entity = Node(package='gazebo_ros',
-                        executable='spawn_entity.py',
-                        arguments=['-topic', 'robot_description', '-entity', 'my_bot'],
-                        output='screen')
+    spawn_entity = Node(
+        package='gazebo_ros',
+        executable='spawn_entity.py',
+        arguments=['-topic', 'robot_description', '-entity', 'my_bot'],
+        output='screen',
+    )
 
+    # Run the spawner node from the controller_manager package. This will start the controllers.
     diff_drive_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=["diff_cont"],
     )
 
+    # Run the spawner node from the controller_manager package. This will start the controllers.
     joint_broad_spawner = Node(
         package="controller_manager",
         executable="spawner",
