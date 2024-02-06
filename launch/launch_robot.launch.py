@@ -26,14 +26,14 @@ def generate_launch_description():
         ]), launch_arguments={'use_sim_time': 'false', 'use_ros2_control': 'true'}.items()
     )
 
-    lidar = Node(
-        package="mb_1r2t",
-        executable="mb_1r2t_node",
-        parameters=[
-            {"port": "/dev/ttyUSB0"},
-            {"frame_id": "laser_frame"}
-        ]
-    )
+    # lidar = Node(
+    #     package="mb_1r2t",
+    #     executable="mb_1r2t_node",
+    #     parameters=[
+    #         {"port": "/dev/ttyUSB0"},
+    #         {"frame_id": "laser_frame"}
+    #     ]
+    # )
 
     # joystick = IncludeLaunchDescription(
     #             PythonLaunchDescriptionSource([os.path.join(
@@ -106,7 +106,7 @@ def generate_launch_description():
     # Launch them all!
     return LaunchDescription([
         rsp,
-        lidar,
+        # lidar,
         # joystick,
         # twist_mux,
         delayed_controller_manager,
