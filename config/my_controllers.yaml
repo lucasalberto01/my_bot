@@ -22,6 +22,17 @@ diff_cont:
 
     use_stamped_vel: false
 
+    # MAX SPEED
+    linear:
+      x:
+        has_velocity_limits: true
+        max_velocity: 0.2
+
+    angular:
+      z:
+        has_velocity_limits: true
+        max_velocity: 0.5
+
     # open_loop: false
 
     # wheels_per_side: x
