@@ -26,12 +26,12 @@ diff_cont:
     linear:
       x:
         has_velocity_limits: true
-        max_velocity: 0.2
+        max_velocity: 0.3
 
     angular:
       z:
         has_velocity_limits: true
-        max_velocity: 0.5
+        max_velocity: 0.6
 
     # open_loop: false
 
